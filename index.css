@@ -1,0 +1,61 @@
+
+.gallery
+{
+    border: 1px solid black;
+    margin: 5vh auto;
+    width: 60%;
+    height: 80vh;
+    min-width: 430px;
+    min-height: 290px;
+}
+
+.nav
+{
+    width: 30%;
+    height: 100%;
+    float: left;
+    border-right: 1px solid black;
+}
+
+figure
+{
+    margin-left: 30%;
+    width: 69%;
+}
+
+label
+{
+    width: 95%;
+    border-bottom: 1px solid black; 
+    display: block;
+    padding: 15px 0 15px 5%;
+}
+
+.gallery-image
+{
+    max-width: 85%;
+    max-height: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+input
+{
+    display: none;
+}
+
+.img1:checked ~ main img:not(.img1),
+.img2:checked ~ main img:not(.img2),
+.img3:checked ~ main img:not(.img3),
+.img4:checked ~ main img:not(.img4)
+{
+    display: none;
+}
+
+.img1:checked ~ main label.img1,
+.img2:checked ~ main label.img2,
+.img3:checked ~ main label.img3,
+.img4:checked ~ main label.img4
+{
+    background-color: #ffc;
+}
