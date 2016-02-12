@@ -4,29 +4,31 @@
     border: 1px solid black;
     margin: 5vh auto;
     width: 60%;
-    height: 80vh;
-    min-width: 430px;
-    min-height: 290px;
+    min-width: 300px;
+    max-width: 810px;
+    overflow: auto;
 }
 
 .nav
 {
-    width: 30%;
     height: 100%;
+    width: 29%;
     float: left;
-    border-right: 1px solid black;
 }
 
 figure
 {
-    margin-left: 30%;
-    width: 69%;
+    margin: 0;
+    padding: 5% 0;
+    float: left;
+    width: 70%;
+    border-left: 1px solid black;
 }
 
 label
 {
     width: 95%;
-    border-bottom: 1px solid black; 
+    border-bottom: 1px solid black;
     display: block;
     padding: 15px 0 15px 5%;
 }

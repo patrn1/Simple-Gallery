@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="index.css">
+        <title>Галерея</title>
     </head>
     <body>
         <input type="radio" name="lol" id="img1" class="img1" checked>
@@ -49,11 +50,11 @@
                 value: function (index) {
                     this.index = index;
                     this.interval = setInterval(function () {
-                        var choice = this.choices[this.index++];
-                        choice.checked = true;
-                        if (this.index === this.choices.length) {
+                        if (this.index >= this.choices.length) {
                             this.index = 0;
                         }
+                        var choice = this.choices[this.index++];
+                        choice.checked = true;
                     }.bind(this), 5000)
                 },
                 configurable: false,
@@ -69,10 +70,10 @@
                 writable: false
             });
             gallery.start(0);
-            gallery.addEventListener('click', function (e) {
-                if (e.target.tagName === 'LABEL') {
+            gallery.addEventListener('click', function (event) {
+                if (event.target.tagName === 'LABEL') {
                     gallery.stop();
-                    var newIndex = parseInt(e.target.attributes.index.value) + 1;
+                    var newIndex = parseInt(event.target.attributes.index.value) + 1;
                     gallery.start(newIndex);
                 }
             }, false);
