@@ -11,9 +11,9 @@
 
 .nav
 {
-    height: 100%;
     width: 29%;
     float: left;
+    border-right: 1px solid black;
 }
 
 figure
@@ -22,7 +22,6 @@ figure
     padding: 5% 0;
     float: left;
     width: 70%;
-    border-left: 1px solid black;
 }
 
 label
@@ -46,18 +45,18 @@ input
     display: none;
 }
 
-.img1:checked ~ main img:not(.img1),
-.img2:checked ~ main img:not(.img2),
-.img3:checked ~ main img:not(.img3),
-.img4:checked ~ main img:not(.img4)
+#img1:checked ~ main img:not(.img1),
+#img2:checked ~ main img:not(.img2),
+#img3:checked ~ main img:not(.img3),
+#img4:checked ~ main img:not(.img4)
 {
     display: none;
 }
 
-.img1:checked ~ main label.img1,
-.img2:checked ~ main label.img2,
-.img3:checked ~ main label.img3,
-.img4:checked ~ main label.img4
+#img1:checked ~ main label.img1,
+#img2:checked ~ main label.img2,
+#img3:checked ~ main label.img3,
+#img4:checked ~ main label.img4
 {
     background-color: #ffc;
 }

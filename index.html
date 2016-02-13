@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -6,10 +6,10 @@
         <title>Галерея</title>
     </head>
     <body>
-        <input type="radio" name="lol" id="img1" class="img1" checked>
-        <input type="radio" name="lol" id="img2" class="img2">
-        <input type="radio" name="lol" id="img3" class="img3">
-        <input type="radio" name="lol" id="img4" class="img4">
+        <input type="radio" name="gallery-menu" id="img1" checked>
+        <input type="radio" name="gallery-menu" id="img2">
+        <input type="radio" name="gallery-menu" id="img3">
+        <input type="radio" name="gallery-menu" id="img4">
         <main>
             <div class="gallery">
                 <div class="nav">
@@ -77,6 +77,20 @@
                     gallery.start(newIndex);
                 }
             }, false);
+            var navBlock = document.querySelector('.nav');
+            Object.defineProperty(navBlock, 'setHight', {
+                value: function () {
+                    this.style.height = '0';
+                    this.style.height = gallery.clientHeight.toString()+'px';
+                },
+                configurable: false,
+                enumerable: false,
+                writable: false
+            });
+            navBlock.setHight();
+            window.addEventListener('resize', function (event) {
+                navBlock.setHight();
+            }, true);
         </script>
     </body>
 </html>
