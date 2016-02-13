@@ -1,7 +1,11 @@
 
+body
+{
+    background-image: url('purple-bg.png');
+}
+
 .gallery
 {
-    border: 1px solid black;
     margin: 5vh auto;
     width: 60%;
     min-width: 300px;
@@ -11,9 +15,11 @@
 
 .nav
 {
+    margin: 0 1% 0 0;
     width: 29%;
     float: left;
-    border-right: 1px solid black;
+    display: none;
+    background-color: rgb(230, 230, 255);
 }
 
 figure
@@ -22,12 +28,13 @@ figure
     padding: 5% 0;
     float: left;
     width: 70%;
+    background-color: rgb(240, 240, 245);
 }
 
 label
 {
     width: 95%;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(204, 204, 255);
     display: block;
     padding: 15px 0 15px 5%;
 }
@@ -58,5 +65,5 @@ input
 #img3:checked ~ main label.img3,
 #img4:checked ~ main label.img4
 {
-    background-color: #ffc;
+    background-color: rgb(204, 204, 255);
 }
