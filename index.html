@@ -73,12 +73,12 @@
             gallery.addEventListener('click', function (event) {
                 if (event.target.tagName === 'LABEL') {
                     gallery.stop();
-                    var newIndex = parseInt(event.target.attributes.index.value) + 1;
+                    var newIndex = parseInt(event.target.getAttribute('index')) + 1;
                     gallery.start(newIndex);
                 }
             }, false);
             var navBlock = document.querySelector('.nav');
-            Object.defineProperty(navBlock, 'setHight', {
+            Object.defineProperty(navBlock, 'setHeight', {
                 value: function () {
                     this.style.height = '0';
                     this.style.height = gallery.clientHeight.toString()+'px';
@@ -87,9 +87,11 @@
                 enumerable: false,
                 writable: false
             });
-            navBlock.setHight();
             window.addEventListener('resize', function (event) {
-                navBlock.setHight();
+                navBlock.setHeight();
+            }, true);
+            window.addEventListener('load', function (event) {
+                navBlock.setHeight();
             }, true);
         </script>
     </body>
