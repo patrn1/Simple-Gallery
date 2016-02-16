@@ -1,37 +1,54 @@
 
+html
+{
+    height: 100%;
+}
+
 body
 {
-    background-image: url('purple-bg.png');
+    margin: 0;
+    padding: 3% 3%;
+    height: 100%;
+    background-color: rgb(136, 132, 173);
+    box-sizing: border-box;
+}
+
+main
+{
+    height: 100%;
 }
 
 .gallery
 {
-    margin: 5vh auto;
-    width: 60%;
-    min-width: 300px;
+    margin: 0 auto;
+    min-height: 200px;
+    min-width: 350px;
     max-width: 810px;
-    overflow: auto;
+    position: relative;
+    padding-bottom: 20%;
 }
 
-.nav
+.gallery-nav
 {
     margin: 0 1% 0 0;
+    height: 100%;
     width: 29%;
-    float: left;
-    display: none;
     background-color: rgb(230, 230, 255);
+    overflow-y: auto;
+    position: absolute;
 }
 
-figure
+.gallery-content
 {
-    margin: 0;
-    padding: 5% 0;
-    float: left;
+    margin: 0 0 0 30%;
+    padding: 0;
+    height: 100%;
     width: 70%;
+    position: absolute;
     background-color: rgb(240, 240, 245);
 }
 
-label
+.gallery-label
 {
     width: 95%;
     border-bottom: 1px solid rgb(204, 204, 255);
@@ -39,31 +56,35 @@ label
     padding: 15px 0 15px 5%;
 }
 
-.gallery-image
+.gallery-item
 {
-    max-width: 85%;
-    max-height: 100%;
-    margin: 0 auto;
-    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
 }
 
-input
-{
-    display: none;
-}
-
-#img1:checked ~ main img:not(.img1),
-#img2:checked ~ main img:not(.img2),
-#img3:checked ~ main img:not(.img3),
-#img4:checked ~ main img:not(.img4)
+[name="gallery-radio"]
 {
     display: none;
 }
 
-#img1:checked ~ main label.img1,
-#img2:checked ~ main label.img2,
-#img3:checked ~ main label.img3,
-#img4:checked ~ main label.img4
+#gallery-item1:checked ~ .gallery-content .gallery-item:not([index="0"]),
+#gallery-item2:checked ~ .gallery-content .gallery-item:not([index="1"]),
+#gallery-item3:checked ~ .gallery-content .gallery-item:not([index="2"]),
+#gallery-item4:checked ~ .gallery-content .gallery-item:not([index="3"])
+{
+    display: none;
+}
+
+#gallery-item1:checked ~ .gallery-nav .gallery-label[index="0"],
+#gallery-item2:checked ~ .gallery-nav .gallery-label[index="1"],
+#gallery-item3:checked ~ .gallery-nav .gallery-label[index="2"],
+#gallery-item4:checked ~ .gallery-nav .gallery-label[index="3"]
 {
     background-color: rgb(204, 204, 255);
 }

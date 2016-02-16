@@ -2,28 +2,29 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="author" content="v-samoylov">
         <link rel="stylesheet" href="index.css">
         <title>Галерея</title>
     </head>
     <body>
-        <input type="radio" name="gallery-menu" id="img1" checked>
-        <input type="radio" name="gallery-menu" id="img2">
-        <input type="radio" name="gallery-menu" id="img3">
-        <input type="radio" name="gallery-menu" id="img4">
         <main>
             <div class="gallery">
-                <div class="nav">
-                    <label for="img1" class="img1" index="0">Пальмы</label>
-                    <label for="img2" class="img2" index="1">Дорога</label>
-                    <label for="img3" class="img3" index="2">Баскетбол</label>
-                    <label for="img4" class="img4" index="3">Зима</label>
+                <input type="radio" name="gallery-radio" id="gallery-item1" checked>
+                <input type="radio" name="gallery-radio" id="gallery-item2">
+                <input type="radio" name="gallery-radio" id="gallery-item3">
+                <input type="radio" name="gallery-radio" id="gallery-item4">
+                <div class="gallery-nav">
+                    <label for="gallery-item1" class="gallery-label" index="0">Маяк</label>
+                    <label for="gallery-item2" class="gallery-label" index="1">Панда</label>
+                    <label for="gallery-item3" class="gallery-label" index="2">Баскетбол</label>
+                    <label for="gallery-item4" class="gallery-label" index="3">Зима</label>
                 </div>
-                <figure>
-                    <img src="images/1.jpg" class="gallery-image img1">
-                    <img src="images/2.jpg" class="gallery-image img2">
-                    <img src="images/3.jpg" class="gallery-image img3">
-                    <img src="images/4.jpg" class="gallery-image img4">
-                </figure>
+                <div class="gallery-content">
+                    <img src="images/1.jpg" class="gallery-item" index="0">
+                    <img src="images/2.jpg" class="gallery-item" index="1">
+                    <img src="images/3.jpg" class="gallery-item" index="2">
+                    <img src="images/4.jpg" class="gallery-item" index="3">
+                </div>
             </div>
         </main>
         <script type="text/javascript">
@@ -77,23 +78,6 @@
                     gallery.start(newIndex);
                 }
             }, false);
-            var navBlock = document.querySelector('.nav');
-            Object.defineProperty(navBlock, 'setHeight', {
-                value: function () {
-                    this.style.height = '0';
-                    this.style.height = gallery.clientHeight.toString()+'px';
-                },
-                configurable: false,
-                enumerable: false,
-                writable: false
-            });
-            window.addEventListener('resize', function (event) {
-                navBlock.setHeight();
-            }, true);
-            window.addEventListener('load', function (event) {
-                navBlock.setHeight();
-                navBlock.style.display = 'block';
-            }, true);
         </script>
     </body>
 </html>
